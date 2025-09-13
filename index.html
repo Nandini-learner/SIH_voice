@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to Text Assistant Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎤 Voice to Text Assistant Demo</h1>
+        
+
+
+        <!-- Voice Recording Button -->
+        <div class="voice-section">
+            <button id="voiceBtn" class="voice-button">
+                🎤 Tap to Speak
+            </button>
+            <div id="status" class="status hidden">
+                🔴 Recording... (Auto-detecting language, output in English)
+            </div>
+        </div>
+
+        <!-- Recognized Text Display -->
+        <div id="textPreview" class="text-preview hidden">
+            <h3>Recognized Text:</h3>
+            <div id="recognizedText" class="recognized-text"></div>
+        </div>
+
+        <!-- Civic Reporting Demo -->
+        <div class="civic-report">
+            <h2>📝 Report Civic Issue</h2>
+            <div id="inputIndicator" class="input-indicator hidden">
+                📝 Voice input auto-translated to English
+            </div>
+            <textarea id="issueDescription" placeholder="Describe the civic issue..." rows="4"></textarea>
+            <button class="submit-btn">Submit Report</button>
+        </div>
+    </div>
+
+    <script src="voice-demo.js"></script>
+</body>
+</html>
