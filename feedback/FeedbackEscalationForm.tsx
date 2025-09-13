@@ -1,4 +1,3 @@
-// src/components/FeedbackEscalationForm.tsx
 import React, { useState } from 'react';
 import {
   View,
@@ -9,25 +8,36 @@ import {
   ScrollView
 } from 'react-native';
 
+interface FeedbackData {
+  name: string;
+  position: string;
+  department: string;
+  dateReceived: string;
+}
+
 interface Props {
-  reportId: string;
-  dateReported: string;
-  location: string;
-  category: string;
-  onSubmit: (data: any) => void;
+  reportId?: string;
+  dateReported?: string;
+  location?: string;
+  category?: string;
+  onSubmit?: (data: FeedbackData) => void;
 }
 
 const FeedbackEscalationForm: React.FC<Props> = ({
-  reportId,
-  dateReported,
-  location,
-  category,
-  onSubmit
+  reportId = '',
+  dateReported = '',
+  location = '',
+  category = '',
+  onSubmit = () => {}
 }) => {
   const [name, setName] = useState('');
   const [position, setPosition] = useState('');
   const [department, setDepartment] = useState('');
   const [dateReceived, setDateReceived] = useState('');
+
+  const handleSubmit = () => {
+    onSubmit({ name, position, department, dateReceived });
+  };
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -79,12 +89,7 @@ const FeedbackEscalationForm: React.FC<Props> = ({
         placeholder="DD/MM/YYYY"
       />
 
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          onSubmit({ name, position, department, dateReceived });
-        }}
-      >
+      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Submit Escalation</Text>
       </TouchableOpacity>
     </ScrollView>
