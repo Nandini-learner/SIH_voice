@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Escalation Form</title>
+    <link rel="stylesheet" href="escalation.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Escalation Form</h1>
+
+        <div class="section">
+            <label>Issue Reference ID</label>
+            <div class="value" id="reportId">REP-2024-001</div>
+
+            <label>Date Reported</label>
+            <div class="value" id="dateReported">15/01/2024</div>
+
+            <label>Location</label>
+            <div class="value" id="location">Main Street, City Center</div>
+
+            <label>Category</label>
+            <div class="value" id="category">Infrastructure</div>
+        </div>
+
+        <h2>Higher Authority Acknowledgment</h2>
+
+        <form id="escalationForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" id="position" placeholder="Enter your position" required>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input type="text" id="department" placeholder="Enter department" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dateReceived">Date Received</label>
+                <input type="date" id="dateReceived" required>
+            </div>
+
+            <button type="submit">Submit Escalation</button>
+        </form>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="escalation.js"></script>
+</body>
+</html>
